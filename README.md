@@ -15,7 +15,9 @@ import pandas as pd'
 
 'seattle = data.seattle_weather()
 seattle.head()'
+
 ### relationship between precipitation and date with respective to weather and the size of point by amount of precipitation
+
 'alt.Chart(seattle).mark_circle().encode(
     alt.X('date', title="Date",scale=alt.Scale(zero=False)),
     alt.Y('temp_max',title="Temp max", scale=alt.Scale(zero=False, padding=1)),
@@ -26,5 +28,7 @@ seattle.head()'
             alt.Tooltip('weather'),
             alt.Tooltip('precipitation')]
 ).properties(width=500,height=400,title="Max tempreature vs date against weather and precipitation")'
-!(images/weather/visualization.png)
+
+!(./images/weather/visualization.png)
+
 ## Visualization price data 
