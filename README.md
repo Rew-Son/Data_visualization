@@ -32,3 +32,6 @@ seattle.head()'
 ![Example screenshot](./images/weather/visualization.png)
 
 ## Visualization price data 
+
+## Status
+Project is: _in progress_
