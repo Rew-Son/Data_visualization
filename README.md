@@ -3,7 +3,7 @@ This project presents the sample of usage of altair for data visualization.
 
 ## Visualization weather data 
 
-### Import libraries 
+* Import libraries 
 
 'from vega_datasets import data
 import os
@@ -11,12 +11,12 @@ import altair as alt
 import numpy as np
 import pandas as pd'
 
-### Load dataset
+* Load dataset
 
 'seattle = data.seattle_weather()
 seattle.head()'
 
-### Relationship between precipitation and date with respective to weather and the size of point by amount of precipitation
+* Relationship between precipitation and date with respective to weather and the size of point by amount of precipitation
 
 'alt.Chart(seattle).mark_circle().encode(
     alt.X('date', title="Date",scale=alt.Scale(zero=False)),
@@ -30,6 +30,11 @@ seattle.head()'
 ).properties(width=500,height=400,title="Max tempreature vs date against weather and precipitation")'
 
 ![Example screenshot](./images/weather/visualization.png)
+
+* Precipitation in 2 years every month on detailed and overview chart
+![Example screenshot](./images/weather/visualization(2).png)
+
+
 
 ## Visualization price data 
 
