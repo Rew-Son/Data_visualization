@@ -83,7 +83,7 @@ detail = (
 
 detail | minimap
 ```
-![Example screenshot](./images/weather/visualization (2).png)
+![Example screenshot](./images/weather/visualization(2).png)
 
 * Precipitation with average rainfall compared to the weather
 ```
@@ -105,7 +105,7 @@ rule = base.mark_rule().encode(
 
 line + rule
 ```
-![Example screenshot](./images/weather/visualization (4).png)
+![Example screenshot](./images/weather/visualization(4).png)
 
 * Max temperature with varying size of line
 ```
@@ -117,7 +117,7 @@ alt.Chart(seattle_2015).mark_trail().encode(
     
 ).properties(title=" Max temp ",width=600,height=400)
 ```
-![Example screenshot](./images/weather/visualization (5).png)
+![Example screenshot](./images/weather/visualization(5).png)
 
 * Precipitation used layered area compared to the weather
 ```
@@ -145,7 +145,7 @@ alt.Chart(seattle_2015).mark_area().encode(
     height=100,width=500,title=" weather in Seattle in 2015"
 )
 ```
-![Example screenshot](./images/weather/visualization (7).png)
+![Example screenshot](./images/weather/visualization(7).png)
 
 * Displays a quantitative representation of the minimum temperatures with positive and negative values compared to the average minimum temperatures
 ```
@@ -163,7 +163,7 @@ alt.Chart(seattle_2015).mark_bar().encode(
     tooltip=['date','temp_min']
 ).properties(height=400,width=600,title="Average min temp in Seattle in 2015 - negative values")
 ```
-![Example screenshot](./images/weather/visualization (8).png)
+![Example screenshot](./images/weather/visualization(8).png)
 
 * Min and max temperatures every year
 ```
@@ -188,7 +188,7 @@ tick = alt.Chart(seattle).mark_tick(
 
 bar + tick
 ```
-![Example screenshot](./images/weather/visualization (9).png)
+![Example screenshot](./images/weather/visualization(9).png)
 
 ## Visualization price data 
 
