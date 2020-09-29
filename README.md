@@ -1,6 +1,10 @@
 # Data_visualization
 This project presents the sample of usage of altair for data visualization.
 
+## Table of contents
+* [Visualization weather data](#Visualization weather data)
+* [Visualization price data](#Visualization price data)
+
 ## Visualization weather data 
 
 * Import libraries 
@@ -130,7 +134,7 @@ alt.Chart(seattle).mark_area(opacity=0.2).encode(
     tooltip=['weather','date','precipitation']
 ).properties(title=" Weather in Seattle",width=500,height=350)
 ```
-![Example screenshot](./images/weather/visualization (6).png)
+![Example screenshot](./images/weather/visualization(6).png)
 
 * Precipitation distribution with weather diagram
 ```
