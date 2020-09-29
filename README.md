@@ -5,11 +5,13 @@ This project presents the sample of usage of altair for data visualization.
 
 * Import libraries 
 
-'from vega_datasets import data
+'''
+from vega_datasets import data
 import os
 import altair as alt
 import numpy as np
-import pandas as pd'
+import pandas as pd
+'''
 
 * Load dataset
 
