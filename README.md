@@ -36,6 +36,8 @@ seattle.head()'
 
 
 
+
+
 ## Visualization price data 
 
 ## Status
