@@ -2,13 +2,11 @@
 This project presents the sample of usage of altair for data visualization.
 
 ## Table of contents
-* [Visualization weather data](#Visualization weather data)
-* [Visualization price data](#Visualization price data)
+* [Visualization weather data] (#Visualization weather data)
+* [Visualization price data] (#Visualization price data)
 
 ## Visualization weather data 
-
 * Import libraries 
-
 ```
 from vega_datasets import data
 import os
@@ -24,7 +22,6 @@ seattle.head()
 ```
 
 * Relationship between precipitation and date with respective to weather and the size of point by amount of precipitation
-
 ```
 alt.Chart(seattle).mark_circle().encode(
     alt.X('date', title="Date",scale=alt.Scale(zero=False)),
@@ -37,7 +34,6 @@ alt.Chart(seattle).mark_circle().encode(
             alt.Tooltip('precipitation')]
 ).properties(width=500,height=400,title="Max tempreature vs date against weather and precipitation")
 ```
-
 ![Example screenshot](./images/weather/visualization.png)
 
 * Precipitation in 2 years every month on detailed and overview chart
