@@ -1,10 +1,6 @@
 # Data_visualization
 This project presents the sample of usage of altair for data visualization.
 
-## Table of contents
-* [Visualization weather data](#Visualization weather data)
-* [Visualization price data](#Visualization price data)
-
 ## Visualization weather data 
 * Import libraries 
 ```
