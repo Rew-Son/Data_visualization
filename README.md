@@ -5,7 +5,7 @@ This project presents the sample of usage of altair for data visualization.
 
 * Import libraries 
 
-'''
+'''python
 from vega_datasets import data
 import os
 import altair as alt
