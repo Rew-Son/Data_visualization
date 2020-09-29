@@ -2,8 +2,8 @@
 This project presents the sample of usage of altair for data visualization.
 
 ## Table of contents
-* [Visualization weather data] (#Visualization weather data)
-* [Visualization price data] (#Visualization price data)
+* [Visualization weather data](#Visualization weather data)
+* [Visualization price data](#Visualization price data)
 
 ## Visualization weather data 
 * Import libraries 
@@ -191,6 +191,95 @@ bar + tick
 ![Example screenshot](./images/weather/visualization(9).png)
 
 ## Visualization price data 
+
+* Load data
+```
+from sklearn.datasets import load_boston
+boston = load_boston()
+```
+* Describe the data
+```
+print(boston.DESCR)
+```
+* Add target to input data in pandas DataFrame
+```
+bos = pd.DataFrame(boston.data)
+bos.columns = boston.feature_names
+bos['PRICE'] = boston.target
+print(bos.head())
+```
+* Show the data summary
+```
+print(bos.describe())
+```
+
+* Show te basic comparision between average number of rooms per dwelling and price
+```
+alt.Chart(bos).mark_circle().encode(
+    alt.X('RM'),
+    alt.Y('PRICE'),
+    tooltip=[alt.Tooltip('RM'),
+            alt.Tooltip('PRICE')]
+).configure_mark(color='red').properties(width=600,height=400,title="Average number of rooms per dwelling vs Price")
+```
+![Example screenshot](./images/price/visualization(0).png)
+
+* Relationship between average number of rooms and price with a categorical field of crime rate
+```
+domain = ['0','100']
+range_dom = ['green', 'red']
+alt.Chart(bos).mark_point().encode(
+    x='RM',
+    y='PRICE',
+    color=alt.Color('CRIM', scale=alt.Scale(domain=domain, range=range_dom)),
+    tooltip=[alt.Tooltip('RM'),
+            alt.Tooltip('PRICE'),
+            alt.Tooltip('CRIM')]
+).properties(width=500,height=400,title="Average number of rooms per dwelling vs Price against crime rate")
+```
+![Example screenshot](./images/price/visualization.png)
+
+* The relationship between B-proportion of blacks, CRIM- crime rate and AGE -proportion of owner-occupied units built prior to 1940 for the tax bracket
+```
+domain = ['100', '1000']
+range_ = ["steelblue", "salmon"]
+
+alt.Chart(bos).mark_circle().encode(
+    alt.X(alt.repeat("column"), type='quantitative'),
+    alt.Y(alt.repeat("row"), type='quantitative'),
+    color=alt.Color('TAX', scale=alt.Scale(domain=domain, range=range_)),
+).properties(
+    width=150,
+    height=150
+).repeat(
+    row=['B', 'CRIM', 'AGE'],
+    column=['AGE', 'CRIM', 'B']
+).interactive()
+```
+![Example screenshot](./images/price/visualization(1).png)
+
+* Relationship of price to tax with respect with area representations with gradient
+```
+alt.Chart(bos).mark_area(
+    line={'color':'darkblue'},
+    color=alt.Gradient(
+        gradient='linear',
+        stops=[alt.GradientStop(color='white', offset=0),
+               alt.GradientStop(color='darkblue', offset=1)],
+        x1=1,
+        x2=1,
+        y1=1,
+        y2=0
+    )
+).encode(
+    alt.X('PRICE'),
+    alt.Y('TAX'),
+    tooltip=['PRICE','TAX']
+).properties(title="Price vs Tax",width=600,height=400)
+```
+![Example screenshot](./images/price/visualization(2).png)
+
+
 
 ## Status
 Project is: _in progress_
